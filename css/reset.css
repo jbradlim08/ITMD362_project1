@@ -1,0 +1,26 @@
+body{
+  height: 100vh;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+
+  font-family: Montserrat, sans-serif;
+  font-size: 20px;
+}
+
+p,
+label,
+input,
+div,
+button{
+  color: #556f78; /*purple*/
+  margin: 0px;
+  padding: 0px;
+
+  font-family: Montserrat, sans-serif;
+  font-size: 20px;
+}
+
+.logo{
+  height: 45px;
+}
