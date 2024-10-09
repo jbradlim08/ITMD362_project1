@@ -24,3 +24,29 @@ button{
 .logo{
   height: 45px;
 }
+
+/* from 0px to 320px */
+@media (max-width: 320px){
+  p,
+  label,
+  input,
+  div,
+  button{
+    font-size: 18px;
+  }
+}
+
+/* from 720px to infinity */
+@media (min-width: 720px){
+  p,
+  label,
+  input,
+  div,
+  button{
+    font-size: 25px;
+  }
+
+  .logo{
+    height: 55px;
+  }
+}
