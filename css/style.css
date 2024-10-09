@@ -1,0 +1,154 @@
+body{
+  background-color: #151b29;
+}
+
+.form_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.page_border_top{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 3px; 
+  background-color: rgb(0, 128, 53);
+  box-shadow: 0 3px 10px rgb(0, 128, 53);
+}
+
+.page_border_bottom{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 3px; 
+  background-color: rgb(0, 128, 53);
+  box-shadow: 0 -3px 10px rgb(0, 128, 53);
+}
+
+
+.form_style{
+  position: relative;
+  background-color: #0e121c;
+  width: 400px;
+  height: 600px;
+
+  border-radius: 5px;
+
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form_head_border,
+.form_foot_border{
+  position: absolute;
+  left: 0;
+  right: 0;
+
+  background-image: linear-gradient(to left, rgb(0, 128, 53), #0e121c);
+  height: 25px;
+}
+
+.form_head_border{
+  top: 0;
+  border-radius: 5px 5px 0px 0px;
+  box-shadow: 0 3px 10px rgb(0, 128, 53);
+}
+
+.form_foot_border{
+  bottom: 0;
+  height: 12px;
+  border-radius: 0px 0px 5px 5px;
+  box-shadow: 0 -3px 10px rgb(0, 128, 53);
+}
+
+.form_information{
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.form_logo{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  gap: 15px;
+}
+
+.form_logo p{
+  font-size: 50px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.form_username,
+.form_password,
+.form_email{
+  font-weight: bold;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+}
+
+.form_input{
+  padding: 0px 10px;
+  height: 48px;
+  color: #485b64;
+
+  background: #151b29;
+  border: none;
+  box-shadow: inset 0px -2px 5px black;
+
+  border-radius: 2px;
+}
+
+.form_input::placeholder{
+  color: #29353b;
+}
+
+
+.form_forgot_password{
+  font-size: 15px;
+  width: 130px;
+  color: rgba(0, 128, 53, 0.664);
+}
+
+.form_forgot_password:hover{
+  color: rgb(0, 128, 53);
+}
+
+.form_forgot_password:active{
+  opacity: 70%;
+}
+
+.form_submit{
+  background-color: rgb(0, 128, 53);
+  width: 100%;
+
+  border: none;
+  border-radius: 2px;
+  padding: 7px 0px;
+  margin-top: 20px;
+
+  color: white;
+}
+
+.form_submit:hover{
+  background-color: rgb(0, 103, 43);
+  color: rgb(220, 220, 220);
+}
+
+.form_submit:active{
+  opacity: 70%;
+}
