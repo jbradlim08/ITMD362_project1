@@ -134,7 +134,7 @@ body{
 }
 
 .form_forgot_password:active{
-  opacity: 70%;
+  color: purple;
 }
 
 .form_submit{
