@@ -13,38 +13,39 @@
   </head>
 
   <body>
-      <div class="form_container">
+      <div class="body_container">
         <!--Top glow-->
-        <div class="page_border_top"></div>
-        
-        <form class="form_style" method="get" action="#null">
+        <form class="form_container" method="get" action="#null">
           <div class="form_head_border"></div>
 
           <!--Fill-->
           <div class="form_information">
             <!--Logo-->
             <div class="form_logo">
-              <img class="logo" src="images/logo.png" alt="This is a UniX logo">
-              <p>UniX</p>
+              <div class="logo_name">
+                <img class="logo" src="images/logo.png" alt="This is a UniX logo">
+                <p>UniX</p>
+              </div>
+              <div class="form_description">Make your desired game in <span>UniX</span> Game Engine</div>
             </div>
 
             <!--Username-->
             <div class="form_username">
               <label class="email">Username</label>
-              <input class="form_input" type="text" name="username" placeholder="username">
+              <input class="form_input" type="text" name="username" placeholder="username" required>
             </div>
 
             <!--Password-->
             <div class="form_password">
               <label class="email">Password</label>
-              <input class="form_input" type="password" name="password">
+              <input class="form_input" type="password" name="password" required>
               <a href="" class="form_forgot_password">Forgot Password</a>
             </div>
 
             <!--Email-->
             <div class="form_email">
               <label class="email">Email</label>
-              <input class="form_input" type="text" name="email" placeholder="example@gmail.com">
+              <input class="form_input" type="text" name="email" placeholder="example@gmail.com" required>
             </div>
 
             <!--Sign in-->
@@ -54,9 +55,8 @@
           <!--Bottom glow-->
           <div class="form_foot_border"></div>
         </form>
-
-        <div class="page_border_bottom"></div>
       </div>
+      <div class="page_border_bottom"></div>
   </body>
 
 </html>
