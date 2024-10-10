@@ -159,6 +159,8 @@ body{
   margin-top: 20px;
 
   color: white;
+
+  cursor: pointer;
 }
 
 .form_submit:hover{
