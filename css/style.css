@@ -99,6 +99,7 @@ body{
   color: #485b64;
   font-size: 12px;
   font-weight: 600;
+  text-align: center;
 
 }
 
@@ -173,13 +174,13 @@ body{
 }
 
 /* from 0px to 320px */
-@media (max-width: 320px){
+@media (min-width: 320px){
   .form_container{
-    width: 400px;
+    width: 300px;
   }
 
   .form_information{
-    width: 280px;
+    width: 250px;
   }
 }
 
