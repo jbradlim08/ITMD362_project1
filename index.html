@@ -2,7 +2,7 @@
 <html lang="en">
 
   <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form</title>
     <link rel="stylesheet" href="css/style.css">
@@ -14,10 +14,8 @@
 
   <body>
       <div class="body_container">
-        <!--Top glow-->
-        <form class="form_container" method="get" action="#null">
+        <form class="form_container" method="get" action="#null" autocomplete="on">
           <div class="form_head_border"></div>
-
           <!--Fill-->
           <div class="form_information">
             <!--Logo-->
@@ -28,30 +26,25 @@
               </div>
               <div class="form_description">Make your dream game in <span>UniX</span> Game Engine</div>
             </div>
-
             <!--Username-->
             <div class="form_username">
               <label class="email">Username</label>
               <input class="form_input" type="text" name="username" placeholder="username" required>
             </div>
-
             <!--Password-->
             <div class="form_password">
               <label class="email">Password</label>
               <input class="form_input" type="password" name="password" required>
               <a href="" class="form_forgot_password">Forgot Password</a>
             </div>
-
             <!--Email-->
             <div class="form_email">
               <label class="email">Email</label>
               <input class="form_input" type="text" name="email" placeholder="example@gmail.com" required>
             </div>
-
             <!--Sign in-->
             <input class="form_submit" type="submit" name="signin" value="Sign in">
           </div>
-
           <!--Bottom glow-->
           <div class="form_foot_border"></div>
         </form>
