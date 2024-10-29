@@ -1,11 +1,10 @@
 import {Account} from './account.js'
-const account = new Account()
-let currentState = 'Sign in'
+const account1 = new Account()
+let currentState = 1
 
-if(currentState == 'Sign in'){
-  // Username
-  
-  let isValidUsername = false;
+
+// Username validation
+let isValidUsername = false;
 const usernameInput = document.querySelector('.input_username');
 
 if (usernameInput) {
@@ -31,70 +30,88 @@ if (usernameInput) {
 }
 
 
-  // Password
-  let isValidPassword = false
-  const passwordInput = document.querySelector('.input_password')
-  if (passwordInput) {
-    passwordInput.addEventListener('input', (event) => {
-      let val = event.target.value;
+// Password validation
+let isValidPassword = false
+const passwordInput = document.querySelector('.input_password')
+if (passwordInput) {
+  passwordInput.addEventListener('input', (event) => {
+    let val = event.target.value;
 
-      // Define regular expressions for each requirement
-      const hasNoSpaces = !/\s/.test(val);
-      const hasTwoUppercase = (val.match(/[A-Z]/g) || []).length >= 2;
-      const hasTwoNumbers = (val.match(/\d/g) || []).length >= 2;
-      const hasSymbol = /[!@#$%^&*(),.?":{}|<>]/.test(val);
+    // Define regular expressions for each requirement
+    const hasNoSpaces = !/\s/.test(val);
+    const hasTwoUppercase = (val.match(/[A-Z]/g) || []).length >= 2;
+    const hasTwoNumbers = (val.match(/\d/g) || []).length >= 2;
+    const hasSymbol = /[!@#$%^&*(),.?":{}|<>]/.test(val);
 
-      // Check if all conditions are met
-      isValidPassword = !hasNoSpaces && !hasTwoUppercase && !hasTwoNumbers && !hasSymbol
-    })
-  }
-
-  let isValidEmail = false;
-  const emailInput = document.querySelector('.input_email');
-
-  if (emailInput) {
-    emailInput.addEventListener('input', (event) => {
-      let val = event.target.value;
-
-      // Basic email format check: contains @ and a domain part
-      const emailPattern = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      const isValidFormat = emailPattern.test(val);
-
-      isValidEmail = isValidFormat;
-    });
-  }
-
-
-  if(usernameInput && passwordInput && emailInput){
-    document.querySelector('.form_submit').addEventListener('click', (event) => {
-      if(isValidUsername && isValidPassword && isValidEmail){
-        account.addToList(usernameInput.value, passwordInput.value, emailInput.value)
-      } else if(!isValidPassword && !isValidEmail){
-        alert('Password and Email is not valid')
-      } else if(!isValidPassword){
-        alert('Password is not valid')
-      } else if(!isValidEmail){
-        alert('Email is not valid')
-      }
-    })
-  }
-
-}
-else if(currentState == 'Log in'){
-  const usernameInput = document.querySelector('.input_username');
-  const passwordInput = document.querySelector('.input_password')
-  const emailInput = document.querySelector('.input_email')
-
-  document.querySelector('.form_submit').addEventListener('click', (event) => {
-    account.forEach((account) => {
-      if(account.username == usernameInput && account.password == passwordInput && account.email == emailInput){
-        isValid = true
-        console.log('successfully login')
-      }
-    })
+    // Check if all conditions are met
+    isValidPassword = hasNoSpaces && hasTwoUppercase && hasTwoNumbers && hasSymbol
   })
 }
 
+// Email validation
+let isValidEmail = false;
+const emailInput = document.querySelector('.input_email');
+
+if (emailInput) {
+  emailInput.addEventListener('input', (event) => {
+    let val = event.target.value;
+
+    // Basic email format check: contains @ and a domain part
+    const emailPattern = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const isValidFormat = emailPattern.test(val);
+
+    isValidEmail = isValidFormat;
+  });
+}
+
+
+
+
+ // validation for all
+if(usernameInput && passwordInput && emailInput){
+  document.querySelector('.form_submit_input').addEventListener('click', () => {
+    // Signin state
+    if(currentState == 1){
+      let accountExist = false
+      account1.account.forEach((account) => {
+        if(account.email == emailInput.value){
+          alert('account is exist')
+          accountExist = true
+        }
+      })
+     
+      if(!accountExist){
+        if(isValidUsername && isValidPassword && isValidEmail && currentState == 1){
+          account1.addToList(usernameInput.value, passwordInput.value, emailInput.value)
+        } else if(!isValidPassword && !isValidEmail){
+          alert('Password and Email is not valid')
+        } else if(!isValidPassword){
+          alert('Password is not valid')
+        } else if(!isValidEmail){
+          alert('Email is not valid')
+        }
+      }
+        
+    } 
+    
+    // login state
+    else{
+      let accountExist = false
+      account1.account.forEach((account) => {
+        if(account.username == usernameInput.value && account.password == passwordInput.value && account.email == emailInput.value && currentState == 2){
+          accountExist = true
+        }
+      })
+
+      if(accountExist){
+        alert('successfuly login')
+      }else{
+        alert('account is not found')
+      }
+    }
+    
+  })
+}
 
 
 
@@ -111,9 +128,10 @@ document.querySelector('.already_have_account').addEventListener('click',(event)
     submitInput.value = 'Log in' :
     submitInput.value = 'Sign in'
 
-  currentState == 'Sign in' ?
-    currentState = 'Log in' :
-    currentState = 'Sign in'
+  currentState == 1 ? // login state
+    currentState = 2 : // Signin state
+    currentState = 1
+
 })
 
-console.log(account)
+console.log(account1)
