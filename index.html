@@ -28,28 +28,51 @@
             </div>
             <!--Username-->
             <div class="form_username">
-              <label class="email">Username</label>
-              <input class="form_input" type="text" name="username" placeholder="username" required>
+              <label class="form_username_text">Username</label>
+              <input class="form_input input_username" type="text" name="username" placeholder="username" required>
             </div>
             <!--Password-->
             <div class="form_password">
-              <label class="email">Password</label>
-              <input class="form_input" type="password" name="password" required>
+              <div class="form_password_layout">
+                <label class="form_password_text">Password</label>
+                <div class="form_password_img">
+                  <!--image-->
+                  <div>  
+                    <img src="images/password_info.png" alt="Password Requirement">
+                  </div>
+                  <!--info-->
+                  <div class="form_password_req">
+                    <div class="form_password_req_layout">
+                      <p>No space</p>
+                      <p>At least 2 capital letters</p>
+                      <p>At least 2 numbers</p>
+                      <p>At least 1 symbol</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <input class="form_input input_password" type="password" name="password" required>
               <a href="" class="form_forgot_password">Forgot Password</a>
             </div>
             <!--Email-->
             <div class="form_email">
-              <label class="email">Email</label>
-              <input class="form_input" type="text" name="email" placeholder="example@gmail.com" required>
+              <label class="form_email_text">Email</label>
+              <input class="form_input input_email" type="text" name="email" placeholder="example@gmail.com" required>
             </div>
             <!--Sign in-->
-            <input class="form_submit" type="submit" name="signin" value="Sign in">
+            <div class="form_submit">
+              <a class="already_have_account" href="">Already have account</a>
+              <input class="form_submit_input" type="submit" name="signin" value="Sign in">
+            </div>
           </div>
           <!--Bottom glow-->
           <div class="form_foot_border"></div>
         </form>
       </div>
       <div class="page_border_bottom"></div>
+
+    <!--Update the js in real time-->
+    <script src="js/script.js" type="module"></script>
   </body>
 
 </html>
