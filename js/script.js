@@ -75,7 +75,7 @@ if(usernameInput && passwordInput && emailInput){
       let accountExist = false
       account1.account.forEach((account) => {
         if(account.email == emailInput.value){
-          alert('account is exist')
+          alert('account is exist with this email')
           accountExist = true
         }
       })
@@ -93,7 +93,7 @@ if(usernameInput && passwordInput && emailInput){
       }
         
     } 
-    
+
     // login state
     else{
       let accountExist = false
