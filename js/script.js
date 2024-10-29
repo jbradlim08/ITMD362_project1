@@ -64,13 +64,10 @@ if (emailInput) {
   });
 }
 
-
-
-
  // validation for all
-if(usernameInput && passwordInput && emailInput){
-  document.querySelector('.form_submit_input').addEventListener('click', () => {
+document.querySelector('.form_submit_input').addEventListener('click', () => {
     // Signin state
+  if(usernameInput.value && passwordInput.value && emailInput.value){
     if(currentState == 1){
       let accountExist = false
       account1.account.forEach((account) => {
@@ -108,10 +105,12 @@ if(usernameInput && passwordInput && emailInput){
       }else{
         alert('account is not found')
       }
-    }
-    
-  })
-}
+    }    
+  }
+  else{
+    alert('input is empty')
+  }
+})
 
 
 
