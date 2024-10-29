@@ -144,11 +144,14 @@ body{
 }
 
 .form_password_img{
-  position: relative;
+  position: relative;       
 }
 
-.form_password_img:hover .form_password_req {
-  display: block;
+.form_password_img:hover .form_password_req,
+.form_password_img:active .form_password_req{
+  opacity: 1;
+  visibility: visible;
+  
 }
 
 .form_password_img img{
@@ -162,7 +165,10 @@ body{
   left: 0;
   z-index: 10;
 
-  display: none;
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity 0.15s;
 }
 
 .form_password_req_layout{
